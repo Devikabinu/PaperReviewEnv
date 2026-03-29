@@ -1,0 +1,16 @@
+[
+  "tests/test_environment.py::test_no_state_leakage",
+  "tests/test_environment.py::test_reset_invalid_task",
+  "tests/test_environment.py::test_reset_valid_tasks",
+  "tests/test_environment.py::test_state_before_and_after_reset",
+  "tests/test_environment.py::test_step_before_reset",
+  "tests/test_environment.py::test_step_done_true",
+  "tests/test_graders.py::test_contradictory_recommendation_penalty",
+  "tests/test_graders.py::test_graders_return_different_scores",
+  "tests/test_graders.py::test_identical_scores_penalty",
+  "tests/test_graders.py::test_perfect_action_reward",
+  "tests/test_graders.py::test_rewards_in_range",
+  "tests/test_graders.py::test_terrible_action_reward",
+  "tests/test_validate.py::test_api_endpoints",
+  "tests/test_validate.py::test_openenv_yaml_valid"
+]

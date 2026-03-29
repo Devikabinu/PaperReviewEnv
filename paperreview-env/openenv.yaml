@@ -1,0 +1,53 @@
+name: paperreview-env
+version: 1.0.0
+description: >
+  A peer review simulation environment where agents evaluate scientific papers
+  across novelty, methodology, statistical validity, reproducibility, and clarity.
+author: your-hf-username
+license: MIT
+observation_space: PaperObservation
+action_space: ReviewAction
+reward_range:
+  - 0.0
+  - 1.0
+max_steps: 1
+tasks:
+  - id: task_easy
+    name: Flag Obvious Flaws
+    difficulty: easy
+    description: >
+      Paper has 4 planted, obvious flaws. Agent must identify them and recommend rejection.
+    target_score_range:
+      - 0.80
+      - 0.95
+  - id: task_medium
+    name: Assess Mixed Quality Paper
+    difficulty: medium
+    description: >
+      Paper has genuine strengths and real weaknesses. Agent must score each dimension
+      correctly and recommend major revision.
+    target_score_range:
+      - 0.55
+      - 0.75
+  - id: task_hard
+    name: Detect Subtle Statistical Manipulation
+    difficulty: hard
+    description: >
+      Paper appears polished but contains subtle statistical issues including p-hacking,
+      cherry-picked baselines, and HARKing. Agent must detect these and recommend major revision.
+    target_score_range:
+      - 0.35
+      - 0.55
+tags:
+  - science
+  - peer-review
+  - evaluation
+  - nlp
+  - openenv
+endpoints:
+  reset: /reset
+  step: /step
+  state: /state
+  tasks: /tasks
+  grader: /grader
+  baseline: /baseline
